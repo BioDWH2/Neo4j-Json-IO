@@ -48,7 +48,10 @@ public class Neo4jJsonIO {
 
     private void run(final CmdArgs commandLine) {
         checkForUpdate();
-        if (StringUtils.isNotEmpty(commandLine.exportFilePath) && StringUtils.isNotEmpty(commandLine.endpoint))
+        if (commandLine.help) {
+            printHelp(commandLine);
+        }
+        else if (StringUtils.isNotEmpty(commandLine.exportFilePath) && StringUtils.isNotEmpty(commandLine.endpoint))
             export(commandLine.exportFilePath, commandLine.endpoint, commandLine.username, commandLine.password);
         else {
             LOGGER.error("export and endpoint arguments must be specified");
