@@ -16,7 +16,7 @@ Exporting a `.json.gz` file from Neo4j is done using the following command.
 
 If authentication is disabled, the username and password parameters can be ignored.
 ~~~BASH
-> java -jar Neo4j-GraphML-Importer.jar -i /path/to/file.graphml -e bolt://localhost:8083
+> java -jar Neo4j-Json-IO.jar --export /path/to/file.json.gz -e bolt://localhost:8083
 ~~~
 
 ## Help
